@@ -1,0 +1,171 @@
+<html>
+<head>
+  <link rel="icon" href="Nyan_Cat.ico">
+  <title>
+    My Keyboard
+  </title>
+  <style>
+    body{
+      background-image: url(bg.jpg);
+    }
+    .btn{
+      float: left;
+      margin: 0 5px 5px 0;
+      border: 2px solid white;;
+      border-radius: 5px;
+      line-height: 45px;
+      text-align: center;
+      width: 45px;
+      height: 45px;
+      font-family:Courier New;
+      background-color: white;
+    }
+    .btn:hover {
+      cursor: pointer;
+      background-color: #e6ccff;
+    }
+    .disOn{
+
+    }
+    .disOff{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div style="align-items: center;margin: 50px auto;width: 800px;">
+    <h2 style="font-family:Courier New;text-align:center;">Visual Keyboard</h2>
+    <textarea id="writearea" rows="6" cols="30" style="width:796px;resize:none;font-family:Courier New;font-size:25px;border-color:white;border-radius:5px;margin-bottom:5px;" readonly></textarea>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">`</span><span class="disOff" name="nd">~</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">1</span><span class="disOff" name="nd">!</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">2</span><span class="disOff" name="nd">@</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">3</span><span class="disOff" name="nd">#</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">4</span><span class="disOff" name="nd">$</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">5</span><span class="disOff" name="nd">%</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">6</span><span class="disOff" name="nd">^</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">7</span><span class="disOff" name="nd">&amp;</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">8</span><span class="disOff" name="nd">*</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">9</span><span class="disOff" name="nd">(</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">0</span><span class="disOff" name="nd">)</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">-</span><span class="disOff" name="nd">_</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">=</span><span class="disOff" name="nd">+</span></div>
+    <div class="btn" onclick="deletetext();" style="width:89px;"><span>Delete</span></div>
+
+    <div class="btn" onclick="writetab();" style="width:89px;"><span>Tab</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">q</span><span class="disOff" name="nd">Q</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">w</span><span class="disOff" name="nd">W</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">e</span><span class="disOff" name="nd">E</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">r</span><span class="disOff" name="nd">R</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">t</span><span class="disOff" name="nd">T</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">y</span><span class="disOff" name="nd">Y</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">u</span><span class="disOff" name="nd">U</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">i</span><span class="disOff" name="nd">I</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">o</span><span class="disOff" name="nd">O</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">p</span><span class="disOff" name="nd">P</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">[</span><span class="disOff" name="nd">{</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">]</span><span class="disOff" name="nd">}</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">\</span><span class="disOff" name="nd">|</span></div>
+
+    <div class="btn" onclick="capslockP();" style="width:94px;"><span>Caps Lock</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">a</span><span class="disOff" name="nd">A</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">s</span><span class="disOff" name="nd">S</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">d</span><span class="disOff" name="nd">D</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">f</span><span class="disOff" name="nd">F</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">g</span><span class="disOff" name="nd">G</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">h</span><span class="disOff" name="nd">H</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">j</span><span class="disOff" name="nd">J</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">k</span><span class="disOff" name="nd">K</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">l</span><span class="disOff" name="nd">L</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">;</span><span class="disOff" name="nd">:</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">'</span><span class="disOff" name="nd">"</span></div>
+    <div class="btn" onclick="writeenter();" style="width:94px;"><span>Enter</span></div>
+
+    <div class="btn" onclick="shiftP();" style="width:121px;"><span>Shift</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">z</span><span class="disOff" name="nd">Z</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">x</span><span class="disOff" name="nd">X</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">c</span><span class="disOff" name="nd">C</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">v</span><span class="disOff" name="nd">V</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">b</span><span class="disOff" name="nd">B</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">n</span><span class="disOff" name="nd">N</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">m</span><span class="disOff" name="nd">M</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">,</span><span class="disOff" name="nd"><</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">.</span><span class="disOff" name="nd">></span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">/</span><span class="disOff" name="nd">?</span></div>
+    <div class="btn" onclick="clearT();" style="width:121px;"><span>Clear</span></div>
+
+    <div class="btn" onclick="writespace(this);" style="width:791px;"><span> </span></div>
+    <div style="font-family:Courier New;text-align:center;"><p>Idea from <a href="https://cdn.tutsplus.com/net/uploads/legacy/378_jqueryKeyboard/final.png">here</a> but code from me.</p></div>
+
+  </div>
+  <script>
+    var c = false ;
+    var s = false ;
+    function writetext(x){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value + x.querySelector('.disOn').innerHTML ;
+      if (s == true) {
+        sw2();
+      }
+    }
+    function writespace(){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value + " ";
+    }
+    function writetab(){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value + "    ";
+    }
+    function writeenter(){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value + "\n";
+    }
+    function deletetext(){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value.substr(0,document.getElementById('writearea').value = document.getElementById('writearea').value.length - 1)
+    }
+    function clearT(){
+      document.getElementById('writearea').value = document.getElementById('writearea').value = " ";
+    }
+    function sw1(){
+      var on = document.getElementsByName('st');
+      var off = document.getElementsByName('nd');
+
+      for(var i = on.length - 1; i >= 0; --i){
+       on[i].className = "disOff";
+      }
+      for(var i = on.length - 1; i >= 0; --i){
+       off[i].className = "disOn";
+      }
+    }
+    function sw2(){
+      var off = document.getElementsByName('st');
+      var on = document.getElementsByName('nd');
+
+      for(var i = on.length - 1; i >= 0; --i){
+       on[i].className = "disOff";
+      }
+      for(var i = on.length - 1; i >= 0; --i){
+       off[i].className = "disOn";
+      }
+    }
+    function shiftP() {
+      if (s == false){
+        sw1();
+        s = true ;
+        c = false ;
+      }else{
+        sw2();
+        s = false ;
+        c = false ;
+      }
+    }
+
+    function capslockP() {
+      if (c == false){
+        sw1();
+        c = true ;
+        s = false ;
+      }else{
+        sw2();
+        c = false ;
+        s = false ;
+      }
+    }
+  </script>
+</body>
+</html>
