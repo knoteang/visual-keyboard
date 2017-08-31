@@ -43,7 +43,7 @@
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">4</span><span class="disOff" name="nd">$</span></div>
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">5</span><span class="disOff" name="nd">%</span></div>
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">6</span><span class="disOff" name="nd">^</span></div>
-    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">7</span><span class="disOff" name="nd">&amp;</span></div>
+    <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">7</span><span class="disOff" name="nd">&</span></div>
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">8</span><span class="disOff" name="nd">*</span></div>
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">9</span><span class="disOff" name="nd">(</span></div>
     <div class="btn" onclick="writetext(this);"><span class="disOn" name="st">0</span><span class="disOff" name="nd">)</span></div>
@@ -101,9 +101,15 @@
     var c = false ;
     var s = false ;
     function writetext(x){
-      document.getElementById('writearea').value = document.getElementById('writearea').value = document.getElementById('writearea').value + x.querySelector('.disOn').innerHTML ;
+      var str = x.querySelector('.disOn').innerHTML;
+      if(str == "&amp;"){
+        str = "&";
+      }
+      document.getElementById('writearea').value = document.getElementById('writearea').value + str ;
       if (s == true) {
         sw2();
+        c = false ;
+        s = false ;
       }
     }
     function writespace(){
